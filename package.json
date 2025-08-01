@@ -1,0 +1,34 @@
+{
+  "name": "templaterepo",
+  "version": "1.0.0",
+  "description": "A ready-to-use project starter template designed for rapid development and clean architecture. Easily clone, fork, or generate a new repository using this template to kickstart your own projects with best practices in place.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-final": "webpack --mode production",
+    "build": "webpack",
+    "dev": "webpack serve",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "clean": "rm -rf dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lesetja-Malapane/templaterepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lesetja-Malapane/templaterepo/issues"
+  },
+  "homepage": "https://github.com/Lesetja-Malapane/templaterepo#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
