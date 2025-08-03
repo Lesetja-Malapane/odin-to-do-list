@@ -1,13 +1,6 @@
 console.log("Hello, world");
+import Task from "./classes"
 
-class ToDo {
-    constructor(title, description, dueDate, priority) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-    }
-}
 
-const les = new ToDo("les", "hello World", new Date(), "top");
+const les = new Task("les", "hello World", new Date(), "top");
 console.log(les);
