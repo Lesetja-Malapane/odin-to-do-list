@@ -7,4 +7,22 @@ class Task {
     }
 }
 
-export {Task}
+class List {
+    constructor(listId) {
+        this.id = listId;
+        this.list = [];
+    }
+
+    addItem(item) {
+        this.list.push(item)
+    }
+
+    getList() {
+        return this.list;
+    }
+
+    getId() {
+        return this.id;
+    }
+}
+export {Task, List}

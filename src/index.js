@@ -1,6 +1,12 @@
 console.log("Hello, world");
-import {Task} from "./classes"
+import {createList, createTask} from "./functions"
 
+const tasks = createList("primary");
 
-const les = new Task("les", "hello World", new Date(), "top");
-console.log(les);
+const les = createTask("les", "hello World", new Date(), "top");
+const kat = createTask("Story", "My Life", new Date(), "top");
+
+tasks.addItem(les);
+tasks.addItem(kat);
+
+console.log(tasks.getList());
