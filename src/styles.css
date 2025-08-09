@@ -45,14 +45,18 @@ h1 {
     font-size: 30px;
 }
 
-button {
-    background-color: var(--third-color);
+#createNewTask, #createNewPage {
     padding: 15px 25px;
     font-size: 15px;
     box-sizing: border-box;
     position: absolute; 
     bottom: 25px;       
     right: 25px;
+    border-radius: 25px;
+}
+
+button {
+    background-color: var(--third-color);
     border-radius: 25px;
 }
 
