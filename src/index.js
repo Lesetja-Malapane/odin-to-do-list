@@ -1,5 +1,5 @@
-console.log("Hello, world");
 import {createList, createTask} from "./functions"
+import "./styles.css"
 
 const tasks = createList("primary");
 
