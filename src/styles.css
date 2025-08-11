@@ -67,3 +67,8 @@ nav button {
 section button {
     border: 3px solid var(--second-color);
 }
+
+#title {
+    height: 20px;
+    width: 75%;
+}
