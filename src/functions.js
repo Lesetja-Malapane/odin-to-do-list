@@ -13,29 +13,34 @@ function createTask(title, description, dueDate, priority) {
 function showForm(contentDiv) {
     const formContent = document.createElement("form");
 
-    // event.preventDefault();
-
     const title = document.createElement("input");
-    const addPageButton = document.createElement("input");
-    addPageButton.type = "submit";
+    const submit = document.createElement("input");
+    submit.type = "submit";
 
-    // addPageButton.textContent = "Add";
-    addPageButton.id = "addPageButton";
+    // submit.textContent = "Add";
+    submit.id = "submit";
     title.id = "title";
     title.name = "title";
     title.type = "text";
 
     formContent.appendChild(title)
-    formContent.appendChild(addPageButton)
+    formContent.appendChild(submit)
     contentDiv.appendChild(formContent)
 
-    return formContent.elements["title"].value;
+    submit.addEventListener("click", () => {
+        event.preventDefault();
+        createPage(title.value, contentDiv);
+        formContent.remove();
+    })
 }
 
-function createPage(title) {
-    const dfsg = document.createElement("h1");
-    dfsg.textContent(title)
-    document.body.appendChild(dfsg)
+function createPage(title, contentDiv) {
+    const dfsg = document.createElement("button");
+    dfsg.id = "newPage";
+    dfsg.textContent = title;
+
+    let newContent = document.getElementById("pages")
+    newContent.appendChild(dfsg);
 }
 
 export {createList, createTask, showForm, createPage}
