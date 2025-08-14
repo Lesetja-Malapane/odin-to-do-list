@@ -14,8 +14,8 @@ const taskButton = document.getElementById("createNewPage");
 const taskSideBar = document.getElementById("pages");
 
 taskButton.addEventListener("click", () => {
-    title = showForm(taskSideBar);
-    createPage(title)
+    showForm(taskSideBar);
+    // createPage(title)
 });
 
 console.log(tasks.getList());
