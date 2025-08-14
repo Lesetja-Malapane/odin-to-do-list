@@ -45,8 +45,21 @@ function createPage(title, contentDiv) {
 function showTasks(myTasks, myDiv) {
     myTasks.getList().forEach(task => {
         const taskElement = document.createElement('div');
-        taskElement.textContent = task.title; // Using the getter
-        taskElement.classList.add('task-item');
+        taskElement.id = "task";
+
+        const title = document.createElement("h2");
+        title.textContent = task.title;
+
+        const description = document.createElement("p");
+        description.textContent = task.description;
+
+
+        // taskElement.textContent = task.title; // Using the getter
+        // taskElement.classList.add('task-item');
+
+        taskElement.appendChild(title);
+        taskElement.appendChild(description);
+
         myDiv.appendChild(taskElement);
     });
 }

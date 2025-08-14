@@ -38,6 +38,7 @@ section {
     padding: 15px 25px;
     border-radius: 25px;
     position: relative;
+    overflow: auto;
 }
 
 h1 {
@@ -51,7 +52,7 @@ h1 {
     font-size: 15px;
     box-sizing: border-box;
     position: absolute; 
-    bottom: 25px;       
+    top: 25px;       
     right: 25px;
     border-radius: 25px;
 }
@@ -83,4 +84,12 @@ section button {
 #title {
     height: 20px;
     width: 75%;
+}
+
+#task {
+    background-color: rgb(213, 199, 250);
+    padding: 15px 25px;
+    margin: 15px;
+    box-sizing: border-box;
+    border-radius: 15px;
 }
