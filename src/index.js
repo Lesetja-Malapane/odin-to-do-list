@@ -7,21 +7,21 @@ const kat = createTask(
     "Lorem Ipsum2",
     "1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, eum sunt itaque quia expedita vitae. Saepe aliquid veritatis quaerat illo nam iure pariatur, veniam eos quis perferendis nulla corporis magni.",
     new Date(),
-    "top"
+    "top", true
 );
 const ya = createTask(
     "Lorem Ipsum2",
     "1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, eum sunt itaque quia expedita vitae. Saepe aliquid veritatis quaerat illo nam iure pariatur, veniam eos quis perferendis nulla corporis magni.",
     new Date(),
-    "top"
+    "top", true
 );
 const kn = createTask(
     "Lorem Ipsum2",
     "1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, eum sunt itaque quia expedita vitae. Saepe aliquid veritatis quaerat illo nam iure pariatur, veniam eos quis perferendis nulla corporis magni.",
     new Date(),
-    "top"
+    "top", true
 );
-const les = createTask("Lorem Ipsum1", "2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, eum sunt itaque quia expedita vitae. Saepe aliquid veritatis quaerat illo nam iure pariatur, veniam eos quis perferendis nulla corporis magni.", new Date(), "top");
+const les = createTask("Lorem Ipsum1", "2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, eum sunt itaque quia expedita vitae. Saepe aliquid veritatis quaerat illo nam iure pariatur, veniam eos quis perferendis nulla corporis magni.", new Date(), "top", true);
 
 tasks.addItem(les);
 tasks.addItem(kat);

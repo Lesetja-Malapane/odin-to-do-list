@@ -4,9 +4,9 @@ function createList(listId) {
     return new List(listId);
 }
 
-function createTask(title, description, dueDate, priority) {
+function createTask(title, description, dueDate, priority, completion) {
     return new Task(
-        title, description, dueDate, priority
+        title, description, dueDate, priority, completion
     )
 }
 
@@ -53,12 +53,17 @@ function showTasks(myTasks, myDiv) {
         const description = document.createElement("p");
         description.textContent = task.description;
 
+        let completion = document.createElement("input");
+        completion.type = "checkbox";
+        completion.name = task.completion;
+        completion.id = "completion";
 
         // taskElement.textContent = task.title; // Using the getter
         // taskElement.classList.add('task-item');
 
         taskElement.appendChild(title);
         taskElement.appendChild(description);
+        taskElement.appendChild(completion);
 
         myDiv.appendChild(taskElement);
     });
