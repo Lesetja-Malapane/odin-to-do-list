@@ -39,8 +39,16 @@ function createPage(title, contentDiv) {
     dfsg.id = "newPage";
     dfsg.textContent = title;
 
-    let newContent = document.getElementById("pages")
-    newContent.appendChild(dfsg);
+    contentDiv.appendChild(dfsg);
 }
 
-export {createList, createTask, showForm, createPage}
+function showTasks(myTasks, myDiv) {
+    myTasks.getList().forEach(task => {
+        const taskElement = document.createElement('div');
+        taskElement.textContent = task.title; // Using the getter
+        taskElement.classList.add('task-item');
+        myDiv.appendChild(taskElement);
+    });
+}
+
+export {createList, createTask, showForm, createPage, showTasks}
