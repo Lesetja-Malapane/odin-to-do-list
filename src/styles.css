@@ -105,11 +105,23 @@ section button {
     border-radius: 15px;
 }
 
-
-input[type='checkbox'] {
+input[type="checkbox"] {
     position: absolute;
     bottom: 25px;
     right: 25px;
     width: 15px;
     height: 15px;
+}
+
+#delete {
+    padding: 8px 13px;
+    border-radius: 25px;
+    background-color: var(--third-color);
+    border: none;
+    color: whitesmoke;
+}
+
+#delete:hover {
+    background-color: red;
+    color: black;
 }

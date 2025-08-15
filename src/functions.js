@@ -44,6 +44,7 @@ function createPage(title, contentDiv) {
 
 function showTasks(myTasks, myDiv) {
     myTasks.getList().forEach(task => {
+        myDiv.textContent = "";
         const taskElement = document.createElement('div');
         taskElement.id = "task";
 
@@ -58,15 +59,29 @@ function showTasks(myTasks, myDiv) {
         completion.name = task.completion;
         completion.id = "completion";
 
+        const del = document.createElement("button");
+        del.textContent = "Delete";
+        del.id = "delete";
+
         // taskElement.textContent = task.title; // Using the getter
         // taskElement.classList.add('task-item');
 
         taskElement.appendChild(title);
         taskElement.appendChild(description);
+        taskElement.appendChild(del);
         taskElement.appendChild(completion);
 
         myDiv.appendChild(taskElement);
     });
 }
 
-export {createList, createTask, showForm, createPage, showTasks}
+function changePage(contentDiv, myDiv) {
+    const pages = document.querySelectorAll("#pages");
+    pages.forEach(element => {
+        element.addEventListener("click", () => {
+            showForm(contentDiv, myDiv)
+        })
+    });
+}
+
+export {createList, createTask, showForm, createPage, showTasks, changePage}

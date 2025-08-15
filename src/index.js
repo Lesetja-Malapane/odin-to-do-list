@@ -1,4 +1,4 @@
-import { createList, createTask, showForm, showTasks } from "./functions";
+import { createList, createTask, showForm, showTasks, changePage } from "./functions";
 import "./styles.css";
 
 const tasks = createList("primary");
@@ -37,3 +37,5 @@ taskButton.addEventListener("click", () => {
 });
 
 showTasks(tasks, rightBar);
+
+changePage(tasks, rightBar)
