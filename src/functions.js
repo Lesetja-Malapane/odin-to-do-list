@@ -4,10 +4,57 @@ function createList(listId) {
     return new List(listId);
 }
 
-function createTask(title, description, dueDate, priority, completion) {
-    return new Task(
-        title, description, dueDate, priority, completion
-    )
+const myList = createList("hi");
+
+function createTask(taskList, section) {
+    // title, description, dueDate, priority, completion
+    const contentDiv = document.querySelector(".tasks");
+    const formContent = document.createElement("form");
+
+    const title = document.createElement("input");
+    const description = document.createElement("input");
+    const dueDate = document.createElement("input");
+    const priority = document.createElement("input");
+    const complete = document.createElement("input");
+    
+    title.id = "title";
+    title.name = "title";
+    title.type = "text";
+
+    description.id = "description";
+    description.name = "description";
+    description.type = "text";
+
+    dueDate.id = "dueDate";
+    dueDate.name = "dueDate";
+    dueDate.type = "date";
+
+    priority.id = "priority";
+    priority.name = "priority";
+    priority.type = "date";
+
+    complete.id = "complete";
+    complete.name = "complete";
+    complete.type = "checkbox";
+    
+    const submit = document.createElement("input");
+    submit.type = "submit";
+    submit.id = "submit";
+
+    // submit.textContent = "Add";
+
+    formContent.appendChild(title)
+    formContent.appendChild(description)
+    formContent.appendChild(dueDate)
+    formContent.appendChild(complete)
+    formContent.appendChild(submit)
+    contentDiv.appendChild(formContent)
+
+    submit.addEventListener("click", () => {
+        event.preventDefault();
+        taskList.addItem(new Task(title.value, description.value, dueDate.value, priority.value, complete.value));
+        formContent.remove();
+    })
 }
 
 function showForm(contentDiv) {
@@ -44,7 +91,8 @@ function createPage(title, contentDiv) {
 
 function showTasks(myTasks, myDiv) {
     myTasks.getList().forEach(task => {
-        myDiv.textContent = "";
+        
+        
         const taskElement = document.createElement('div');
         taskElement.id = "task";
 
@@ -79,7 +127,8 @@ function changePage(contentDiv, myDiv) {
     const pages = document.querySelectorAll("#pages");
     pages.forEach(element => {
         element.addEventListener("click", () => {
-            showForm(contentDiv, myDiv)
+            myDiv.textContent = "";
+            showTasks(contentDiv, myDiv)
         })
     });
 }
