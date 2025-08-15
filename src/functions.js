@@ -6,7 +6,7 @@ function createList(listId) {
 
 const myList = createList("hi");
 
-function createTask(taskList, section) {
+function createTask(taskList, currentPage) {
     // title, description, dueDate, priority, completion
     const contentDiv = document.querySelector(".tasks");
     const formContent = document.createElement("form");
@@ -52,7 +52,7 @@ function createTask(taskList, section) {
 
     submit.addEventListener("click", () => {
         event.preventDefault();
-        taskList.addItem(new Task(title.value, description.value, dueDate.value, priority.value, complete.value));
+        taskList.addItem(new Task(title.value, description.value, dueDate.value, priority.value, complete.value, currentPage));
         formContent.remove();
     })
 }
@@ -82,17 +82,21 @@ function showForm(contentDiv) {
 }
 
 function createPage(title, contentDiv) {
-    const dfsg = document.createElement("button");
-    dfsg.id = "newPage";
-    dfsg.textContent = title;
+    const newPage = document.createElement("button");
+    newPage.id = title;
+    newPage.className = "newPage";
+    newPage.textContent = title;
 
-    contentDiv.appendChild(dfsg);
+    contentDiv.appendChild(newPage);
 }
 
-function showTasks(myTasks, myDiv) {
-    myTasks.getList().forEach(task => {
-        
-        
+function showTasks(myTasks, myDiv, currentPage) {
+    let tasks = myTasks.getList();
+
+    tasks = tasks.filter(task => task.page === currentPage);
+
+    tasks.forEach(task => {
+        if (task.page !== currentPage) return; // Only show tasks for the current page
         const taskElement = document.createElement('div');
         taskElement.id = "task";
 
@@ -123,12 +127,12 @@ function showTasks(myTasks, myDiv) {
     });
 }
 
-function changePage(contentDiv, myDiv) {
+function changePage(contentDiv, myDiv, currentPage) {
     const pages = document.querySelectorAll("#pages");
     pages.forEach(element => {
         element.addEventListener("click", () => {
             myDiv.textContent = "";
-            showTasks(contentDiv, myDiv)
+            showTasks(contentDiv, myDiv, currentPage)
         })
     });
 }

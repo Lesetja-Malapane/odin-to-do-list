@@ -1,10 +1,11 @@
 class Task {
-    constructor(title, description, dueDate, priority, complete) {
+    constructor(title, description, dueDate, priority, complete, page) {
         this._title = title;
         this._description = description;
         this._dueDate = dueDate;
         this._priority = priority;
         this._complete = complete;
+        this._page = page; // Default page for the task
     }
 
     get title() {
@@ -40,6 +41,13 @@ class Task {
     }
     set complete(complete) {
         this._complete = complete;
+    }
+
+    get page() {
+        return this._page;
+    }
+    set page(value) {
+        this._page = value;
     }
 }
 
