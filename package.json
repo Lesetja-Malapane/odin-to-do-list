@@ -9,7 +9,10 @@
     "build": "webpack",
     "dev": "webpack serve",
     "deploy": "git subtree push --prefix dist origin gh-pages",
-    "clean": "rm -rf dist/"
+    "clean": "rm -rf dist/",
+    "prepare": "husky",
+    "prettify": "prettier . --write",
+    "prettify-check": "prettier . --check"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,8 @@
     "globals": "^16.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "prettier": "3.6.2",
     "style-loader": "^4.0.0",
     "webpack": "^5.100.2",
@@ -40,5 +45,8 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
