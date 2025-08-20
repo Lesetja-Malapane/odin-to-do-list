@@ -1,10 +1,8 @@
-import {List, Task} from "./classes";
+import { List, Task } from "./classes";
 
 function createList(listId) {
     return new List(listId);
 }
-
-const myList = createList("hi");
 
 function createTask(taskList, currentPage) {
     // title, description, dueDate, priority, completion
@@ -16,7 +14,7 @@ function createTask(taskList, currentPage) {
     const dueDate = document.createElement("input");
     const priority = document.createElement("input");
     const complete = document.createElement("input");
-    
+
     title.id = "title";
     title.name = "title";
     title.type = "text";
@@ -36,25 +34,34 @@ function createTask(taskList, currentPage) {
     complete.id = "complete";
     complete.name = "complete";
     complete.type = "checkbox";
-    
+
     const submit = document.createElement("input");
     submit.type = "submit";
     submit.id = "submit";
 
     // submit.textContent = "Add";
 
-    formContent.appendChild(title)
-    formContent.appendChild(description)
-    formContent.appendChild(dueDate)
-    formContent.appendChild(complete)
-    formContent.appendChild(submit)
-    contentDiv.appendChild(formContent)
+    formContent.appendChild(title);
+    formContent.appendChild(description);
+    formContent.appendChild(dueDate);
+    formContent.appendChild(complete);
+    formContent.appendChild(submit);
+    contentDiv.appendChild(formContent);
 
     submit.addEventListener("click", () => {
         event.preventDefault();
-        taskList.addItem(new Task(title.value, description.value, dueDate.value, priority.value, complete.value, currentPage));
+        taskList.addItem(
+            new Task(
+                title.value,
+                description.value,
+                dueDate.value,
+                priority.value,
+                complete.value,
+                currentPage
+            )
+        );
         formContent.remove();
-    })
+    });
 }
 
 function showForm(contentDiv) {
@@ -70,15 +77,15 @@ function showForm(contentDiv) {
     title.name = "title";
     title.type = "text";
 
-    formContent.appendChild(title)
-    formContent.appendChild(submit)
-    contentDiv.appendChild(formContent)
+    formContent.appendChild(title);
+    formContent.appendChild(submit);
+    contentDiv.appendChild(formContent);
 
     submit.addEventListener("click", () => {
         event.preventDefault();
         createPage(title.value, contentDiv);
         formContent.remove();
-    })
+    });
 }
 
 function createPage(title, contentDiv) {
@@ -93,11 +100,11 @@ function createPage(title, contentDiv) {
 function showTasks(myTasks, myDiv, currentPage) {
     let tasks = myTasks.getList();
 
-    tasks = tasks.filter(task => task.page === currentPage);
+    tasks = tasks.filter((task) => task.page === currentPage);
 
-    tasks.forEach(task => {
+    tasks.forEach((task) => {
         if (task.page !== currentPage) return; // Only show tasks for the current page
-        const taskElement = document.createElement('div');
+        const taskElement = document.createElement("div");
         taskElement.id = "task";
 
         const title = document.createElement("h2");
@@ -129,12 +136,12 @@ function showTasks(myTasks, myDiv, currentPage) {
 
 function changePage(contentDiv, myDiv, currentPage) {
     const pages = document.querySelectorAll("#pages");
-    pages.forEach(element => {
+    pages.forEach((element) => {
         element.addEventListener("click", () => {
             myDiv.textContent = "";
-            showTasks(contentDiv, myDiv, currentPage)
-        })
+            showTasks(contentDiv, myDiv, currentPage);
+        });
     });
 }
 
-export {createList, createTask, showForm, createPage, showTasks, changePage}
+export { createList, createTask, showForm, createPage, showTasks, changePage };

@@ -83,6 +83,7 @@ p {
     color: white;
     transition: 500ms;
 }
+
 nav button {
     border: 3px solid var(--first-color);
 }

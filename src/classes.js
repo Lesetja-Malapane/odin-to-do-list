@@ -58,7 +58,7 @@ class List {
     }
 
     addItem(item) {
-        this.list.push(item)
+        this.list.push(item);
     }
 
     getList() {
@@ -69,4 +69,4 @@ class List {
         return this.id;
     }
 }
-export {Task, List}
+export { Task, List };

@@ -7,7 +7,6 @@ const tasks = createList("primary");
 const pageButton = document.getElementById("createNewPage");
 const taskButton = document.getElementById("createNewTask");
 const taskSideBar = document.getElementById("pages");
-const pages = document.querySelectorAll("#pages");
 let rightBar = document.querySelector(".tasks");
 
 pageButton.addEventListener("click", () => {
