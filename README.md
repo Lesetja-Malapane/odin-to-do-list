@@ -5,11 +5,13 @@ A ready-to-use project starter template designed for rapid development and clean
 ## Getting Started
 
 1. Install dependencies:
+
    ```sh
    npm install
    ```
 
 2. Build for development:
+
    ```sh
    npx webpack --mode development
    ```

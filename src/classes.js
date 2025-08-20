@@ -1,72 +1,72 @@
 class Task {
-    constructor(title, description, dueDate, priority, complete, page) {
-        this._title = title;
-        this._description = description;
-        this._dueDate = dueDate;
-        this._priority = priority;
-        this._complete = complete;
-        this._page = page; // Default page for the task
-    }
+  constructor(title, description, dueDate, priority, complete, page) {
+    this._title = title;
+    this._description = description;
+    this._dueDate = dueDate;
+    this._priority = priority;
+    this._complete = complete;
+    this._page = page; // Default page for the task
+  }
 
-    get title() {
-        return this._title;
-    }
-    set title(value) {
-        this._title = value;
-    }
+  get title() {
+    return this._title;
+  }
+  set title(value) {
+    this._title = value;
+  }
 
-    get description() {
-        return this._description;
-    }
-    set description(value) {
-        this._description = value;
-    }
+  get description() {
+    return this._description;
+  }
+  set description(value) {
+    this._description = value;
+  }
 
-    get dueDate() {
-        return this._dueDate;
-    }
-    set dueDate(value) {
-        this._dueDate = value;
-    }
+  get dueDate() {
+    return this._dueDate;
+  }
+  set dueDate(value) {
+    this._dueDate = value;
+  }
 
-    get priority() {
-        return this._priority;
-    }
-    set priority(value) {
-        this._priority = value;
-    }
+  get priority() {
+    return this._priority;
+  }
+  set priority(value) {
+    this._priority = value;
+  }
 
-    get complete() {
-        return this.complete;
-    }
-    set complete(complete) {
-        this._complete = complete;
-    }
+  get complete() {
+    return this.complete;
+  }
+  set complete(complete) {
+    this._complete = complete;
+  }
 
-    get page() {
-        return this._page;
-    }
-    set page(value) {
-        this._page = value;
-    }
+  get page() {
+    return this._page;
+  }
+  set page(value) {
+    this._page = value;
+  }
 }
 
 class List {
-    constructor(listId) {
-        this.id = listId;
-        this.list = [];
-    }
+  constructor(listId) {
+    this.id = listId;
+    this.list = [];
+  }
 
-    addItem(item) {
-        this.list.push(item);
-    }
+  addItem(item) {
+    this.list.push(item);
+  }
 
-    getList() {
-        return this.list;
-    }
+  getList() {
+    return this.list;
+  }
 
-    getId() {
-        return this.id;
-    }
+  getId() {
+    return this.id;
+  }
 }
 export { Task, List };

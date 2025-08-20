@@ -1,128 +1,128 @@
 @import url("https://fonts.googleapis.com/css2?family=Alice&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-    /* base colors */
-    --first-color: #233142;
-    --second-color: #455d7a;
-    --third-color: #f95959;
-    --fourth-color: #e0b9b9;
-    --task-bg-color: rgb(213, 199, 250);
+  /* base colors */
+  --first-color: #233142;
+  --second-color: #455d7a;
+  --third-color: #f95959;
+  --fourth-color: #e0b9b9;
+  --task-bg-color: rgb(213, 199, 250);
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
-    display: flex;
-    justify-items: center;
-    padding: 120px;
-    gap: 5px;
+  display: flex;
+  justify-items: center;
+  padding: 120px;
+  gap: 5px;
 }
 
 nav {
-    background-color: var(--second-color);
-    width: 20%;
+  background-color: var(--second-color);
+  width: 20%;
 }
 
 section {
-    background-color: var(--first-color);
-    width: 80%;
+  background-color: var(--first-color);
+  width: 80%;
 }
 
 nav,
 section {
-    height: 600px;
-    padding: 15px 25px;
-    border-radius: 25px;
-    position: relative;
-    overflow: auto;
+  height: 600px;
+  padding: 15px 25px;
+  border-radius: 25px;
+  position: relative;
+  overflow: auto;
 }
 
 h1 {
-    color: var(--fourth-color);
-    font-size: 30px;
+  color: var(--fourth-color);
+  font-size: 30px;
 }
 
 h2 {
-    font-family: "Open Sans";
+  font-family: "Open Sans";
 }
 
 p {
-    font-family: "Alice";
+  font-family: "Alice";
 }
 
 #createNewTask,
 #createNewPage {
-    background-color: var(--third-color);
-    padding: 15px 25px;
-    font-size: 15px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    border-radius: 25px;
+  background-color: var(--third-color);
+  padding: 15px 25px;
+  font-size: 15px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border-radius: 25px;
 }
 
 .newPage {
-    width: 300px;
-    height: 50px;
-    border: none;
-    background-color: inherit;
-    font-size: 25px;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 650;
-    text-align: left;
-    color: var(--fourth-color);
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color: inherit;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 650;
+  text-align: left;
+  color: var(--fourth-color);
 }
 
 .newPage:hover {
-    color: white;
-    transition: 500ms;
+  color: white;
+  transition: 500ms;
 }
 
 nav button {
-    border: 3px solid var(--first-color);
+  border: 3px solid var(--first-color);
 }
 
 section button {
-    border: 3px solid var(--second-color);
+  border: 3px solid var(--second-color);
 }
 
 #title {
-    height: 20px;
-    width: 75%;
+  height: 20px;
+  width: 75%;
 }
 
 #task {
-    background-color: var(--task-bg-color);
-    padding: 15px 25px;
-    margin: 15px;
-    position: relative;
-    box-sizing: border-box;
-    border-radius: 15px;
+  background-color: var(--task-bg-color);
+  padding: 15px 25px;
+  margin: 15px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 15px;
 }
 
 input[type="checkbox"] {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    width: 15px;
-    height: 15px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 15px;
+  height: 15px;
 }
 
 #delete {
-    padding: 8px 13px;
-    border-radius: 25px;
-    background-color: var(--third-color);
-    border: none;
-    color: whitesmoke;
+  padding: 8px 13px;
+  border-radius: 25px;
+  background-color: var(--third-color);
+  border: none;
+  color: whitesmoke;
 }
 
 #delete:hover {
-    background-color: red;
-    color: black;
+  background-color: red;
+  color: black;
 }

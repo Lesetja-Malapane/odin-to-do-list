@@ -10,21 +10,21 @@ const taskSideBar = document.getElementById("pages");
 let rightBar = document.querySelector(".tasks");
 
 pageButton.addEventListener("click", () => {
-    currentPage = showForm(taskSideBar);
+  currentPage = showForm(taskSideBar);
 });
 
 taskButton.addEventListener("click", () => {
-    console.log("called");
-    createTask(tasks, currentPage);
+  console.log("called");
+  createTask(tasks, currentPage);
 });
 
 changePage(tasks, rightBar);
 
 //set current page to clicked page
 taskSideBar.addEventListener("click", (e) => {
-    if (e.target.className === "newPage") {
-        currentPage = e.target.id;
-        console.log("current page set to: ", currentPage);
-        changePage(tasks, rightBar, currentPage);
-    }
+  if (e.target.className === "newPage") {
+    currentPage = e.target.id;
+    console.log("current page set to: ", currentPage);
+    changePage(tasks, rightBar, currentPage);
+  }
 });
